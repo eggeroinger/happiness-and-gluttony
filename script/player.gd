@@ -35,3 +35,5 @@ func _physics_process(delta):
 		animated_sprite_2d.play("idel_down")
 
 	move_and_slide()
+
+#testing testing, delete this when u see it, lenn
