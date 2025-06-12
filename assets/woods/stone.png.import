@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qss37u4fgimi"
-path="res://.godot/imported/TX Plant.png-1f6e87cca44cfb65ae98289c95dd9c57.ctex"
+uid="uid://c0jgj3nn0ordo"
+path="res://.godot/imported/stone.png-9ef267ef4788b4e4b8cabd8f4223945f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Forest ruins/TX Plant.png"
-dest_files=["res://.godot/imported/TX Plant.png-1f6e87cca44cfb65ae98289c95dd9c57.ctex"]
+source_file="res://assets/woods/stone.png"
+dest_files=["res://.godot/imported/stone.png-9ef267ef4788b4e4b8cabd8f4223945f.ctex"]
 
 [params]
 

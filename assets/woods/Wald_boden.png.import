@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctylyvmk84pgx"
-path="res://.godot/imported/TX Player.png-2576540df657a45e3eef2020d9208fa7.ctex"
+uid="uid://c7vjmd26lufko"
+path="res://.godot/imported/Wald_boden.png-45aaa874631c58eb9b2dd597e22e8f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Forest ruins/TX Player.png"
-dest_files=["res://.godot/imported/TX Player.png-2576540df657a45e3eef2020d9208fa7.ctex"]
+source_file="res://assets/woods/Wald_boden.png"
+dest_files=["res://.godot/imported/Wald_boden.png-45aaa874631c58eb9b2dd597e22e8f48.ctex"]
 
 [params]
 

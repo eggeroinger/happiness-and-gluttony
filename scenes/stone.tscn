@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ihqmljptkacu"]
+
+[ext_resource type="Script" uid="uid://b2vnu8eb02uyl" path="res://script/stone.gd" id="1_tuldt"]
+[ext_resource type="Texture2D" uid="uid://c0jgj3nn0ordo" path="res://assets/woods/stone.png" id="2_f651v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6niw0"]
+size = Vector2(37, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7uw0"]
+size = Vector2(57, 44)
+
+[node name="Stone" type="StaticBody2D"]
+scale = Vector2(0.68171, 0.649793)
+script = ExtResource("1_tuldt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f651v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6niw0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+scale = Vector2(0.879556, 0.765155)
+shape = SubResource("RectangleShape2D_w7uw0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
