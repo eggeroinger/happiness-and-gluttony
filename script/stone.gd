@@ -3,8 +3,8 @@ extends StaticBody2D
 var interactable = false
 var special = false
 
-@onready var text_buble: Label = %"Text buble"
-@onready var stone_buble: Label = %stone_buble
+@onready var text_buble: Label = %"text_bubble"
+@onready var stone_buble: Label = %stone_bubble
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and interactable == true and special == false:
