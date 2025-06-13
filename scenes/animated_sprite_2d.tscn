@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://tubhtpt3i2um"]
+
+[ext_resource type="Texture2D" uid="uid://dpprbwj1wnehk" path="res://assets/Walking_stone/Walking_stone_wake_up.png" id="1_2ccxi"]
+[ext_resource type="Texture2D" uid="uid://cmhguxx5mmo4u" path="res://assets/Walking_stone/Walking_stone.png" id="1_6rhlf"]
+[ext_resource type="Script" uid="uid://bsetnuohisxpy" path="res://script/enemy_test.gd" id="2_2ccxi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5pty"]
+atlas = ExtResource("1_2ccxi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjjxo"]
+atlas = ExtResource("1_2ccxi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b1je"]
+atlas = ExtResource("1_2ccxi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4qpe"]
+atlas = ExtResource("1_2ccxi")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxcge"]
+atlas = ExtResource("1_2ccxi")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn1jp"]
+atlas = ExtResource("1_6rhlf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3yr6"]
+atlas = ExtResource("1_6rhlf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j25fo"]
+atlas = ExtResource("1_6rhlf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhh1s"]
+atlas = ExtResource("1_6rhlf")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5pty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5pty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjjxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b1je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4qpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxcge")
+}],
+"loop": true,
+"name": &"wake up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn1jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3yr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j25fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhh1s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjjxo"]
+size = Vector2(25, 31)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2prps"]
+radius = 70.0071
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_y5pty")
+animation = &"wake up"
+script = ExtResource("2_2ccxi")
+
+[node name="hurt_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tjjxo")
+
+[node name="activation_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activation_box"]
+shape = SubResource("CircleShape2D_2prps")
+
+[connection signal="animation_looped" from="." to="." method="_on_animation_looped"]
+[connection signal="body_entered" from="hurt_box" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="activation_box" to="." method="_on_activation_box_body_entered"]
